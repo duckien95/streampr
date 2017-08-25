@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VOD Streaming</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static '/jwplayer/jwplayer.js' %}"></script>
+    <script>jwplayer.key="FTQJizSJ7WYT9LEGWnlesR+IblN5m9aCcIBkmg=="</script>
+    <style>
+        #myElement {
+            margin : auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+
+        <h1>WELCOME TO VOD STREAMING APPLIATION</h1>
+
+        <div id="myElement" style="margin : auto;">Loading the player ...</div>
+    </div>
+		<script type="text/javascript">
+			jwplayer("myElement").setup({
+				//height: '50%',
+				aspectratio: '16:9',
+      			displaytitle: true,
+      			visualplaylist: true,
+      			width: '70%',
+
+
+				listbar: {
+					position: 'bottom',
+					size: 320
+				},
+
+				playlist: [
+
+					{
+						file: "rtmp://192.168.4.74/video/mp4:test1.mp4",
+						title: "Trailer 1st"
+					},{
+
+						file: "rtmp://192.168.4.74/video/mp4:test2.mp4",
+						title: "Trailer 2nd"
+					},{
+
+						file: "rtmp://192.168.4.74/video/mp4:test3.mp4",
+						title: "Trailer 3"
+					},{
+
+						file: "rtmp://192.168.4.74/video/mp4:test4.mp4",
+						title: "Trailer 4"
+					},{
+
+						file: "rtmp://192.168.4.74/video/mp4:test5.mp4",
+						title: "Trailer 5"
+					}
+				]
+			});
+		</script>
+</body>
+</html>
